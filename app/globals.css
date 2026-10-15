@@ -1,26 +1,134 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+ background-color: #09090d;
+ color: #f5f0f2;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+.pagina {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background-color: 
+  radial-gradient(
+  circle at 50% 50%, 
+  #29151f 0%
+  #09090d 60%
+  );
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.portada{
+  text-align: center;
+}
+
+.etiqueta {
+  color: #c99aa8;
+  font-size: 11px;
+  letter-spacing: 5px;
+  line-height: 1.8;
+}
+
+h1 {
+  font-size: clamp(58px, 10vw, 100px);
+  font-weight: 400;
+  letter-spacing: -4px;
+  margin: 28px 0;
+}
+
+h1 span {
+  color: #d6a0b1;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+}
+
+.descripcion {
+  color: #b8afb5;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.firma {
+  margin-top: 45px;
+  color: #77717a;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.boton-inicio{
+  margin-top: 30px;
+  padding: 15px 28px;
+  border: 1px solid #805363;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #f5e9ee;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.boton-inicio:hover {
+  background-color: #39202b;
+  color: #d6a0b1;
+  transform: translateY(-3px);
+}
+
+.carta {
+  width: 100%;
+  max-width: 680px;
+  padding: 45px;
+  text-align: left;
+  color: #40332b;
+  background:
+  radial-gradient(
+    ellipse at top left,
+    #fff9e9 0%,
+    #f0e1c3 100%
+  );
+  border: 1px solid #d1bc96;
+  border-radius: 4px;
+  box-shadow:
+  0 15px 50px #00000066,
+  inset 0 0 25px #b99b6b22;
+}
+
+@keyframes aparecerCarta {
+  from {
+    opacity: 0;
+    transform: translateY(25xp) scale(0.98);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
+.carta{
+  animation: aparecerCarta 1.2s ease-out both;
+}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.carta .etiqueta{
+  color: #8c6d50;
+}
+
+.carta h1 {
+  font-size: clamp(38px, 6vw, 58px);
+  letter-spacing: -1px;
+}
+
+.carta h1 span {
+  color: #895b68;
+}
+
+.carta .descripcion {
+  color: #55473c;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .carta{
+    padding: 26px 20px;
+  }
 }
